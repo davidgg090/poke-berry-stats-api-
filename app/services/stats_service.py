@@ -45,15 +45,18 @@ class StatsService:
             arr = np.array(data)
 
             frequency = Counter(data)
-            frequency_dict = dict(sorted(frequency.items()))
 
+            frequency_list = [
+                {"growth_time": k, "frequency": v}
+                for k, v in sorted(frequency.items())
+            ]
             return {
                 'min': float(np.min(arr)),
                 'max': float(np.max(arr)),
                 'mean': float(np.mean(arr)),
                 'median': float(np.median(arr)),
                 'variance': float(np.var(arr)),
-                'frequency': frequency_dict
+                'frequency': frequency_list
             }
 
         except Exception as e:

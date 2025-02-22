@@ -3,6 +3,21 @@ from typing import List, Dict
 from pydantic import BaseModel, Field
 
 
+class FrequencyItem(BaseModel):
+    """
+    Model representing the frequency of a specific growth time.
+
+    This class defines the structure for an item that contains a growth time and its corresponding frequency.
+    It is used to represent how often a particular growth time occurs within a dataset.
+
+    Attributes:
+        growth_time (int): The growth time associated with the frequency.
+        frequency (int): The number of occurrences of the specified growth time.
+    """
+    growth_time: int
+    frequency: int
+
+
 class BerryStatsResponse(BaseModel):
     """
     Model representing the response structure for berry statistics.
@@ -25,11 +40,11 @@ class BerryStatsResponse(BaseModel):
     max_growth_time: float = Field(..., description="Maximum growth time")
     variance_growth_time: float = Field(..., description="Variance of growth times")
     mean_growth_time: float = Field(..., description="Average growth time")
-    frequency_growth_time: Dict[str, int] = Field(..., description="Frequency of growth times")
+    frequency_growth_time: List[FrequencyItem] = Field(..., description="Frequency of growth times")
 
     class Config:
         """Configuration for the BerryStatsResponse model."""
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "berries_names": ["cheri", "chesto", "pecha"],
                 "min_growth_time": 2,
@@ -37,10 +52,9 @@ class BerryStatsResponse(BaseModel):
                 "max_growth_time": 5,
                 "variance_growth_time": 1.2,
                 "mean_growth_time": 3.5,
-                "frequency_growth_time": {
-                    "2": 1,
-                    "3": 2,
-                    "5": 1
-                }
+                "frequency_growth_time": [
+                    {"growth_time": 2, "frequency": 5},
+                    {"growth_time": 3, "frequency": 5},
+                ]
             }
         }

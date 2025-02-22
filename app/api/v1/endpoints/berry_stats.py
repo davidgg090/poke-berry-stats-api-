@@ -19,7 +19,7 @@ router = APIRouter(
             "description": "Statistics calculated successfully",
             "content": {
                 "application/json": {
-                    "example": BerryStatsResponse.Config.schema_extra["example"]
+                    "example": BerryStatsResponse.Config.json_schema_extra["example"]
                 }
             }
         },
