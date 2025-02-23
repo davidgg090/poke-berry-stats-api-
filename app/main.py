@@ -1,3 +1,5 @@
+from typing import Dict
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -26,7 +28,7 @@ app.include_router(v1_router)
 
 
 @app.exception_handler(BaseAPIException)
-async def api_exception_handler(request, exc: BaseAPIException):
+async def api_exception_handler(request, exc: BaseAPIException) -> JSONResponse:
     """
     Handles exceptions of type BaseAPIException for the API.
 
@@ -47,7 +49,7 @@ async def api_exception_handler(request, exc: BaseAPIException):
 
 
 @app.exception_handler(HTTPException)
-async def http_exception_handler(request, exc: HTTPException):
+async def http_exception_handler(request, exc: HTTPException) -> JSONResponse:
     """
     Handles HTTP exceptions for the API.
 
@@ -68,7 +70,7 @@ async def http_exception_handler(request, exc: HTTPException):
 
 
 @app.exception_handler(Exception)
-async def general_exception_handler(request, exc: Exception):
+async def general_exception_handler(request, exc: Exception) -> JSONResponse:
     """
     Handles general exceptions for the API.
 
@@ -89,7 +91,7 @@ async def general_exception_handler(request, exc: Exception):
 
 
 @app.get("/", tags=["health"])
-async def root():
+async def root() -> Dict[str, str]:
     """
     Root endpoint
     """
@@ -101,7 +103,7 @@ async def root():
 
 
 @app.get("/health", tags=["health"])
-async def health_check():
+async def health_check() -> Dict[str, str]:
     """
     Endpoint for health check
     """
