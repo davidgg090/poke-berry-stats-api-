@@ -122,12 +122,12 @@ docker run -p 8000:8000 poke-berry-stats-api
 ## API Documentation
 Once running, visit:
 ```
-Swagger UI: http://localhost:8000/docs
-ReDoc: http://localhost:8000/redoc
+Swagger UI: http://localhost:8000/docs || https://poke-berry-stats-api.fly.dev/docs
+ReDoc: http://localhost:8000/redoc || https://poke-berry-stats-api.fly.dev/redoc
 ```
 
 ## Contributing
 Contributions are welcome!
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
