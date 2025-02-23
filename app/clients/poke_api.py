@@ -19,15 +19,15 @@ class PokeAPIClient:
         session (requests.Session): The session used for making requests to the API.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Initializes the PokeAPIClient with base URL and timeout settings.
         """
-        self.base_url = settings.POKEAPI_BASE_URL
-        self.timeout = settings.POKEAPI_TIMEOUT
-        self.session = requests.Session()
+        self.base_url: str = settings.POKEAPI_BASE_URL
+        self.timeout: int = settings.POKEAPI_TIMEOUT
+        self.session: requests.Session = requests.Session()
 
-    def __del__(self):
+    def __del__(self) -> None:
         """
         Closes the session when the client is deleted.
         """
