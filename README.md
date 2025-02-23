@@ -57,7 +57,7 @@ This API connects to the [PokeAPI](https://pokeapi.co/) to retrieve information 
 ### Local Setup
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/poke-berry-stats-api.git
+git clone https://github.com/davidgg090/poke-berry-stats-api-.git
 cd poke-berry-stats-api
 ```
 2. Create a virtual environment
