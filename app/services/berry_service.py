@@ -16,6 +16,7 @@ class BerryService:
         get_all_berry_stats() -> Dict:
             Asynchronously retrieves all berry statistics, including names and growth time metrics.
     """
+
     def __init__(self):
         """Initializes the BerryService and its dependency on StatsService."""
         self.stats_service = StatsService()

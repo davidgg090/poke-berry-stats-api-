@@ -10,6 +10,7 @@ class BaseAPIException(Exception):
         message (str): A descriptive message for the exception.
         status_code (int): The HTTP status code associated with the exception (default is 500).
     """
+
     def __init__(self, message: str = "", status_code: int = 500):
         self.message = message
         self.status_code = status_code
@@ -28,6 +29,7 @@ class PokeAPIException(BaseAPIException):
         message (str): A descriptive message for the exception (default is "Error with PokeAPI").
         status_code (int): The HTTP status code associated with the exception (default is 500).
     """
+
     def __init__(self, message: str = "Error with PokeAPI", status_code: int = 500):
         super().__init__(message, status_code)
 
@@ -44,6 +46,7 @@ class ValidationException(BaseAPIException):
         message (str): A descriptive message for the exception (default is "Validation error").
         status_code (int): The HTTP status code associated with the exception (default is 400).
     """
+
     def __init__(self, message: str = "Validation error", status_code: int = 400):
         super().__init__(message, status_code)
 
@@ -60,6 +63,7 @@ class NotFoundError(BaseAPIException):
         message (str): A descriptive message for the exception (default is "Resource not found").
         status_code (int): The HTTP status code associated with the exception (default is 404).
     """
+
     def __init__(self, message: str = "Resource not found", status_code: int = 404):
         super().__init__(message, status_code)
 
@@ -76,6 +80,7 @@ class ConfigError(BaseAPIException):
         message (str): A descriptive message for the exception (default is "Configuration error").
         status_code (int): The HTTP status code associated with the exception (default is 500).
     """
+
     def __init__(self, message: str = "Configuration error", status_code: int = 500):
         super().__init__(message, status_code)
 
@@ -92,5 +97,6 @@ class ServiceError(BaseAPIException):
         message (str): A descriptive message for the exception (default is "Service error").
         status_code (int): The HTTP status code associated with the exception (default is 500).
     """
+
     def __init__(self, message: str = "Service error", status_code: int = 500):
         super().__init__(message, status_code)

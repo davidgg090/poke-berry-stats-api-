@@ -21,6 +21,7 @@ class StatsService:
         calculate_growth_time_frequency(growth_times: List[int]) -> Dict[int, int]:
             Calculates the frequency of growth times from the provided list.
     """
+
     def calculate_statistics(self, data: List[int]) -> Dict:
         """
         Calculates statistical metrics from a list of integers.
