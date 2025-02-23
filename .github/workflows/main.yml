@@ -122,7 +122,12 @@ jobs:
     environment: production
 
     steps:
-      - name: Deploy to production
-        run: |
-          echo "Deploy to production environment"
-          # Aquí irían los pasos de deployment específicos
+      - uses: actions/checkout@v4
+
+      - name: Set up Fly
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy to Fly.io
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: flyctl deploy --remote-only
