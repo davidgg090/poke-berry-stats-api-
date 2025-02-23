@@ -22,14 +22,13 @@ class Settings(BaseSettings):
         GRAPH_FORMAT (str): The format for generated graphs.
 
     """
-    API_HOST: str = "0.0.0.0"
+    API_HOST: str = "0.0.0.0"  # nosec B104
     API_PORT: int = 8000
     API_VERSION: str = "v1"
     DEBUG: bool = False
 
     POKEAPI_BASE_URL: str = "https://pokeapi.co/api/v2"
     POKEAPI_TIMEOUT: int = 30
-
 
     CACHE_ENABLED: bool = False
     CACHE_TTL: int = 3600
