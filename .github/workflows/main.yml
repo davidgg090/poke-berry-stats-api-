@@ -58,15 +58,7 @@ jobs:
 
       - name: Run tests with pytest
         run: |
-          pytest --cov-branch --cov-report=xml
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.xml
-          fail_ci_if_error: true
-
+          pytest
   security:
     name: Security Checks
     runs-on: ubuntu-latest
