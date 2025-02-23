@@ -1,5 +1,7 @@
 # Poke Berry Stats API
 
+[![codecov](https://codecov.io/gh/davidgg090/poke-berry-stats-api-/branch/main/graph/badge.svg?token=PX0UX2K36A)](https://codecov.io/gh/davidgg090/poke-berry-stats-api-)
+
 REST API that provides statistics about Pokemon berries growth time, built with FastAPI and Python.
 
 ## Table of Contents

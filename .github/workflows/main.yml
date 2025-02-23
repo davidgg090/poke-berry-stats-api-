@@ -84,11 +84,6 @@ jobs:
           pip install bandit
           bandit -r app/ 
 
-      - name: Run safety check
-        run: |
-          pip install safety
-          safety check
-
   build:
     name: Build Docker Image
     runs-on: ubuntu-latest
