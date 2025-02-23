@@ -1,14 +1,11 @@
 name: Poke Berry Stats API CI/CD
 
-# Triggers for the workflow
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:  # Manual trigger
-
-# Environment variables
+  workflow_dispatch:
 env:
   PYTHON_VERSION: '3.12'
   POETRY_VERSION: '1.7.1'
@@ -58,7 +55,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install -r requirements-dev.txt
 
       - name: Run tests with pytest
         run: |
